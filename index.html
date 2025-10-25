@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Photobooth</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <main id="photobooth-app">
+
+        <section id="landing-page" class="view active">
+            <div class="photobooth-mockup">
+                <div class="top-sign">PhotoBooth</div>
+                <div class="main-body">
+                    <div class="left-panel">
+                        <div class="photo-display-grid">
+                            <div class="small-photo"></div><div class="small-photo"></div><div class="small-photo"></div>
+                            <div class="small-photo"></div><div class="small-photo"></div><div class="small-photo"></div>
+                            <div class="small-photo"></div><div class="small-photo"></div><div class="small-photo"></div>
+                        </div>
+                        <div class="info-panel">
+                            <p class="poses-minutes"><span class="number">4</span> Poses</p>
+                            <p class="poses-minutes"><span class="number">3</span> Minutes</p>
+                            <p class="price-text">$<span class="number">3</span>.</p>
+                        </div>
+                        <div class="dispenser-area">
+                            <p class="dispenser-text">Pictures come out below</p>
+                            <div class="dispenser-slot"></div>
+                        </div>
+                    </div>
+                    <div class="center-divider"></div>
+                    <div class="right-panel">
+                        <div class="curtain"></div>
+                        <div class="stool"></div>
+                        <div class="mirror-mock"></div>
+                    </div>
+                </div>
+            </div>
+            <button id="enter-button" class="interactive-element">Enter</button>
+            <nav class="footer-nav">
+                <a href="#" class="interactive-element">Privacy Policy</a>
+                <a href="#" class="interactive-element">FAQ</a>
+                <a href="#" class="interactive-element">About Me</a>
+                <a href="#" class="interactive-element">Contact Me</a>
+            </nav>
+        </section>
+
+        <section id="capture-page" class="view">
+            <div class="camera-container">
+                <video id="camera-feed" autoplay playsinline muted></video>
+                <canvas id="capture-canvas" style="display: none;"></canvas>
+                <div id="countdown-overlay"></div>
+            </div>
+            <div class="controls">
+                <div class="filter-toggle">
+                    <label for="filter-switch">B&W</label>
+                    <label class="switch">
+                        <input type="checkbox" id="filter-switch">
+                        <span class="slider"></span>
+                    </label>
+                    <label for="filter-switch">Color</label>
+                </div>
+                <button id="take-photo-button">Take Photo</button>
+            </div>
+        </section>
+
+        <section id="printing-page" class="view">
+            <div class="printing-container">
+                <div class="slot-effect"></div>
+                <div class="printing-machine-body">
+                    <p class="printing-label">PHOTOS</p>
+                    <div class="printing-strip-slot">
+                        <div class="photostrip-developing">
+                            <div></div><div></div><div></div><div></div>
+                        </div>
+                    </div>
+                    <div class="printing-controls">
+                        <div class="printing-light"></div>
+                        <div class="printing-button"></div>
+                    </div>
+                </div>
+                <div class="countdown-timer" id="printing-countdown"></div>
+                <p class="developing-text">DEVELOPING...</p>
+            </div>
+        </section>
+
+        <section id="result-page" class="view">
+            <canvas id="result-canvas"></canvas>
+            <div class="result-buttons">
+                <button id="download-button">Download</button>
+                <button id="restart-button">Restart</button>
+            </div>
+        </section>
+
+        <div id="flash-overlay"></div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
